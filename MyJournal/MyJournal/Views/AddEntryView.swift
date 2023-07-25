@@ -9,7 +9,10 @@ import SwiftUI
 
 struct AddEntryView: View {
     var body: some View {
-        HStack (spacing: 30) {
+        HStack {
+            
+            Spacer()
+            
             Button {
                 // add photo
             } label: {
@@ -20,7 +23,9 @@ struct AddEntryView: View {
                     
 
             }
-
+            
+            Spacer()
+            
             Button {
                 // add entry
             } label: {
@@ -29,6 +34,8 @@ struct AddEntryView: View {
                     .foregroundColor(.white)
                     .font(.headline)
             }
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 250)
         .background(Color("PrimaryColor"))
