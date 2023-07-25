@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AddEntryView: View {
+    
+    @State private var isEntryShowing: Bool = false
+    @State private var isPhotoShowing: Bool = false
+    
     var body: some View {
         HStack {
             
@@ -28,6 +32,7 @@ struct AddEntryView: View {
             
             Button {
                 // add entry
+                isEntryShowing = true
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 100))
@@ -39,6 +44,9 @@ struct AddEntryView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 250)
         .background(Color("PrimaryColor"))
+        .sheet(isPresented: $isEntryShowing) {
+            AddNewJournalEntry()
+        }
         
     }
 }

@@ -16,12 +16,12 @@ struct TabbedSidebar: View {
     var body: some View {
         if sizeClass == .compact {
             TabView {
-                ListView()
+                ListScreen()
                     .tabItem {
                         Label("List", systemImage: "list.dash")
                     }
                     .tag(1)
-                PhotoView()
+                PhotoScreen()
                     .tabItem {
                         Label("Photo", systemImage: "photo")
                     }
@@ -30,7 +30,7 @@ struct TabbedSidebar: View {
         } else {
             NavigationView {
                 List {
-                    NavigationLink(destination: ListView()) {
+                    NavigationLink(destination: ListScreen()) {
                         Label {
                             Text("List")
                         } icon: {
@@ -38,7 +38,7 @@ struct TabbedSidebar: View {
                         }
                     }
 
-                    NavigationLink(destination: PhotoView()) {
+                    NavigationLink(destination: PhotoScreen()) {
                         Label {
                             Text("Photo")
                         } icon: {

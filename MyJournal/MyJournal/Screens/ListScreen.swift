@@ -1,5 +1,5 @@
 //
-//  MenuView.swift
+//  ListScreen.swift
 //  MyJournal
 //
 //  Created by Thomas Cowern on 7/25/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct ListScreen: View {
     var body: some View {
         VStack {
             AddEntryView()
@@ -17,8 +17,8 @@ struct ListView: View {
     }
 }
 
-struct MenuView_Previews: PreviewProvider {
+struct ListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListScreen()
     }
 }
