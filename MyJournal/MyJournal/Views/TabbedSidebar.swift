@@ -13,6 +13,8 @@ struct TabbedSidebar: View {
     
     @State private var selection: Int = 1
     
+    var myViews: [Any] = [ListView.self, PhotoView.self]
+    
     var body: some View {
         if sizeClass == .compact {
             TabView {
@@ -37,7 +39,7 @@ struct TabbedSidebar: View {
                             Image(systemName: "list.dash")
                         }
                     }
-                    
+
                     NavigationLink(destination: PhotoView()) {
                         Label {
                             Text("Photo")
@@ -46,10 +48,9 @@ struct TabbedSidebar: View {
                         }
                     }
                 }
-//                .listStyle(SidebarListStyle())
                 .navigationTitle("My Journal")
                 .navigationSplitViewStyle(.balanced)
-                
+
                 Text("Please use the sidbar to make a selection")
                     .font(.largeTitle)
             }
