@@ -9,17 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            ListView()
-                .tabItem {
-                    Label("List", systemImage: "list.dash")
-                }
-            
-            PhotoView()
-                .tabItem {
-                    Label("Photo", systemImage: "photo")
-                }
-        }
+        TabbedSidebar()
     }
 }
 
