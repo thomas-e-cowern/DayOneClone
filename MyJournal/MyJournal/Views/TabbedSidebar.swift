@@ -13,8 +13,6 @@ struct TabbedSidebar: View {
     
     @State private var selection: Int = 1
     
-    var myViews: [Any] = [ListView.self, PhotoView.self]
-    
     var body: some View {
         if sizeClass == .compact {
             TabView {
