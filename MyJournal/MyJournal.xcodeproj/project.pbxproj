@@ -14,6 +14,7 @@
 		4D0A40602A6FFC5B00148256 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A405F2A6FFC5B00148256 /* ListView.swift */; };
 		4D0A40622A6FFCE600148256 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A40612A6FFCE600148256 /* PhotoView.swift */; };
 		4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */; };
+		4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC152A701D3F007F1101 /* AddEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4D0A405F2A6FFC5B00148256 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		4D0A40612A6FFCE600148256 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedSidebar.swift; sourceTree = "<group>"; };
+		4D75DC152A701D3F007F1101 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */,
+				4D75DC152A701D3F007F1101 /* AddEntryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */,
 				4D0A40522A6FF5D100148256 /* ContentView.swift in Sources */,
 				4D0A40602A6FFC5B00148256 /* ListView.swift in Sources */,
+				4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */,
 				4D0A40502A6FF5D100148256 /* MyJournalApp.swift in Sources */,
 				4D0A40622A6FFCE600148256 /* PhotoView.swift in Sources */,
 			);
