@@ -8,8 +8,41 @@
 import SwiftUI
 
 struct AddNewJournalEntry: View {
+    
+    @State private var title: String = "Title"
+    @State private var journalText: String = ""
+    
     var body: some View {
-        Text("Add new journal entry")
+        NavigationStack {
+            VStack {
+                TextField("Add new journal entry...", text: $journalText, axis: .vertical)
+                    .lineLimit(10, reservesSpace: true)
+                    .textFieldStyle(.roundedBorder)
+                    
+            }
+            .padding()
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        // Cancel
+                    } label: {
+                        Text("Save")
+                    }
+
+                }
+
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        // Cancel
+                    } label: {
+                        Text("Cancel")
+                    }
+
+                }
+            }
+        }
     }
 }
 
