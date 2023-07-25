@@ -19,21 +19,44 @@ struct AddNewJournalEntry: View {
                 TextField("Add new journal entry...", text: $journalText, axis: .vertical)
                     .lineLimit(10, reservesSpace: true)
                     .textFieldStyle(.roundedBorder)
+                    .border(Color("PrimaryColor"))
                 
                 Spacer()
                 
-                Text("Select a date")
-                    .font(.title2)
-                            DatePicker("Enter your birthday", selection: $date)
-                                .datePickerStyle(GraphicalDatePickerStyle())
-                                .frame(maxHeight: 400)
-                
-                Button {
-                    // save date
-                } label: {
-                    Text("Set date")
+                VStack {
+                    DatePicker("Choose a date", selection: $date)
+                        .datePickerStyle(.automatic)
+                        .padding(.bottom, 10)
+                    
+                    Button {
+                        // save date
+                    } label: {
+                        Text("Set date")
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                .buttonStyle(.bordered)
+                .padding(.horizontal, 5)
+                .padding(.bottom, 25)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Button {
+                        // Show photos
+                    } label: {
+                        Image(systemName: "camera")
+                            .font(.system(size: 50))
+                            .foregroundColor(Color("PrimaryColor"))
+                            .font(.headline)
+                    }
+
+                }
+                
+//                Text("Select a date")
+//                    .font(.title2)
+//                            DatePicker("Enter your birthday", selection: $date)
+//                                .datePickerStyle(GraphicalDatePickerStyle())
+//                                .frame(maxHeight: 400)
+                
+                
                 
                 Spacer()
 
