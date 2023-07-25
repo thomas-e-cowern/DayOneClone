@@ -11,6 +11,7 @@ struct AddNewJournalEntry: View {
     
     @State private var title: String = "Title"
     @State private var journalText: String = ""
+    @State private var date = Date.now
     
     var body: some View {
         NavigationStack {
@@ -18,6 +19,24 @@ struct AddNewJournalEntry: View {
                 TextField("Add new journal entry...", text: $journalText, axis: .vertical)
                     .lineLimit(10, reservesSpace: true)
                     .textFieldStyle(.roundedBorder)
+                
+                Spacer()
+                
+                Text("Select a date")
+                    .font(.title2)
+                            DatePicker("Enter your birthday", selection: $date)
+                                .datePickerStyle(GraphicalDatePickerStyle())
+                                .frame(maxHeight: 400)
+                
+                Button {
+                    // save date
+                } label: {
+                    Text("Set date")
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer()
+
                     
             }
             .padding()
