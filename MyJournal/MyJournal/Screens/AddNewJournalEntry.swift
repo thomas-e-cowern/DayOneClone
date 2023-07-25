@@ -9,9 +9,17 @@ import SwiftUI
 
 struct AddNewJournalEntry: View {
     
-    @State private var title: String = "Title"
-    @State private var journalText: String = ""
+    @Environment(\.dismiss) private var dismiss
+    
+    @State private var title: String = "\(FormatDate().dateAsString(date: Date.now))"
+    @State private var journalText: String = "Add your journal entry...."
     @State private var date = Date.now
+    
+    let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter
+    }()
     
     var body: some View {
         NavigationStack {
@@ -30,13 +38,16 @@ struct AddNewJournalEntry: View {
                     
                     Button {
                         // save date
+                        title = "\(FormatDate().dateAsString(date: date))"
                     } label: {
                         Text("Set date")
                     }
                     .buttonStyle(.borderedProminent)
                 }
                 .padding(.horizontal, 5)
-                .padding(.bottom, 25)
+                .padding(.bottom, 50)
+                
+                Spacer()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     Button {
@@ -49,18 +60,6 @@ struct AddNewJournalEntry: View {
                     }
 
                 }
-                
-//                Text("Select a date")
-//                    .font(.title2)
-//                            DatePicker("Enter your birthday", selection: $date)
-//                                .datePickerStyle(GraphicalDatePickerStyle())
-//                                .frame(maxHeight: 400)
-                
-                
-                
-                Spacer()
-
-                    
             }
             .padding()
             .navigationTitle(title)
@@ -77,7 +76,7 @@ struct AddNewJournalEntry: View {
 
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        // Cancel
+                        dismiss()
                     } label: {
                         Text("Cancel")
                     }

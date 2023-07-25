@@ -16,6 +16,7 @@
 		4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */; };
 		4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC152A701D3F007F1101 /* AddEntryView.swift */; };
 		4D75DC1A2A7021CC007F1101 /* AddNewJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */; };
+		4D75DC1D2A70375D007F1101 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC1C2A70375D007F1101 /* FormatDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedSidebar.swift; sourceTree = "<group>"; };
 		4D75DC152A701D3F007F1101 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalEntry.swift; sourceTree = "<group>"; };
+		4D75DC1C2A70375D007F1101 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		4D0A404E2A6FF5D100148256 /* MyJournal */ = {
 			isa = PBXGroup;
 			children = (
+				4D75DC1B2A70367D007F1101 /* Utilities */,
 				4D0A405E2A6FFC2000148256 /* Views */,
 				4D0A405D2A6FFC1200148256 /* Screens */,
 				4D0A404F2A6FF5D100148256 /* MyJournalApp.swift */,
@@ -96,6 +99,14 @@
 				4D75DC152A701D3F007F1101 /* AddEntryView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4D75DC1B2A70367D007F1101 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D75DC1C2A70375D007F1101 /* FormatDate.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 			files = (
 				4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */,
 				4D0A40522A6FF5D100148256 /* ContentView.swift in Sources */,
+				4D75DC1D2A70375D007F1101 /* FormatDate.swift in Sources */,
 				4D0A40602A6FFC5B00148256 /* ListScreen.swift in Sources */,
 				4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */,
 				4D0A40502A6FF5D100148256 /* MyJournalApp.swift in Sources */,
