@@ -88,6 +88,9 @@ struct AddNewJournalEntry: View {
             .toolbarBackground(Color("PrimaryColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         }
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
 }
 
