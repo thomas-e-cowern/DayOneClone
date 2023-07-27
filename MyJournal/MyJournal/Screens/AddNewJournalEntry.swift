@@ -25,8 +25,8 @@ struct AddNewJournalEntry: View {
         NavigationStack {
             VStack {
                 TextField("Add new journal entry...", text: $journalText, axis: .vertical)
-                    .lineLimit(10, reservesSpace: true)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .lineLimit(10, reservesSpace: true)
                     .border(Color("PrimaryColor"))
                 
                 Spacer()
@@ -37,15 +37,16 @@ struct AddNewJournalEntry: View {
                         .padding(.bottom, 10)
                     
                     Button {
-                        // save date
+                        // assign date
                         title = "\(FormatDate().dateAsString(date: date))"
                     } label: {
                         Text("Set date")
                             .foregroundColor(.white)
-                            .padding(10)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
                     }
-//                    .buttonStyle(.borderedProminent)
                     .background(Color("PrimaryColor"))
+                    .cornerRadius(5.0)
                 }
                 .padding(.horizontal, 5)
                 .padding(.bottom, 50)
