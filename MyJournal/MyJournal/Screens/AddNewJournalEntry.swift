@@ -12,7 +12,7 @@ struct AddNewJournalEntry: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var title: String = "\(FormatDate().dateAsString(date: Date.now))"
-    @State private var journalText: String = "Add your journal entry...."
+    @State private var journalText: String = ""
     @State private var date = Date.now
     
     let dateFormatter: DateFormatter = {
@@ -26,7 +26,7 @@ struct AddNewJournalEntry: View {
             VStack {
                 TextField("Add new journal entry...", text: $journalText, axis: .vertical)
                     .lineLimit(10, reservesSpace: true)
-                    .textFieldStyle(.roundedBorder)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .border(Color("PrimaryColor"))
                 
                 Spacer()
