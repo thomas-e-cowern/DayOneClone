@@ -41,8 +41,11 @@ struct AddNewJournalEntry: View {
                         title = "\(FormatDate().dateAsString(date: date))"
                     } label: {
                         Text("Set date")
+                            .foregroundColor(.white)
+                            .padding(10)
                     }
-                    .buttonStyle(.borderedProminent)
+//                    .buttonStyle(.borderedProminent)
+                    .background(Color("PrimaryColor"))
                 }
                 .padding(.horizontal, 5)
                 .padding(.bottom, 50)
@@ -70,6 +73,7 @@ struct AddNewJournalEntry: View {
                         // Cancel
                     } label: {
                         Text("Save")
+                            .foregroundColor(.white)
                     }
 
                 }
@@ -79,10 +83,13 @@ struct AddNewJournalEntry: View {
                         dismiss()
                     } label: {
                         Text("Cancel")
+                            .foregroundColor(.white)
                     }
 
                 }
             }
+            .toolbarBackground(Color("PrimaryColor"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
 }
