@@ -15,6 +15,8 @@ struct AddNewJournalEntry: View {
     @State private var journalText: String = ""
     @State private var date = Date.now
     
+    @FocusState private var journalEntryIsFocused: Bool
+    
     var body: some View {
         NavigationStack {
             VStack {
