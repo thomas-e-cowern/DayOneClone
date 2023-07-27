@@ -15,12 +15,6 @@ struct AddNewJournalEntry: View {
     @State private var journalText: String = ""
     @State private var date = Date.now
     
-    let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            return formatter
-    }()
-    
     var body: some View {
         NavigationStack {
             VStack {
