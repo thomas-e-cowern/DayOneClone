@@ -7,6 +7,12 @@
 
 import SwiftUI
 import PhotosUI
+import RealmSwift
+
+class Hotdog: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var name = ""
+}
 
 struct AddNewJournalEntry: View {
     
@@ -97,6 +103,17 @@ struct AddNewJournalEntry: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         // Cancel
+                        let dawg = Hotdog()
+                        dawg.name = "New Jersey"
+                        
+                        if let realm = try? Realm() {
+//                            try? realm.write {
+//                                realm.add(dawg)
+//                            }
+                            
+                            let dawg = realm.objects(Hotdog.self)
+                            print("Hotdog: ", dawg.first?.name)
+                        }
                     } label: {
                         Text("Save")
                             .foregroundColor(.white)

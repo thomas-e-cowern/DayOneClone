@@ -50,6 +50,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D01B08B2A743466006781BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4D0A40432A6FF5D100148256 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +76,7 @@
 		4D0A404E2A6FF5D100148256 /* MyJournal */ = {
 			isa = PBXGroup;
 			children = (
+				4D01B08B2A743466006781BB /* Models */,
 				4D2906112A72C69800FF3826 /* Extensions */,
 				4D75DC1B2A70367D007F1101 /* Utilities */,
 				4D0A405E2A6FFC2000148256 /* Views */,
