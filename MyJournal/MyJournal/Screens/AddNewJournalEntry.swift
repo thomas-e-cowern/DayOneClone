@@ -107,11 +107,18 @@ struct AddNewJournalEntry: View {
                             let entry = Entry()
                             entry.text = journalText
                             entry.date = date
-                            ForEach(images, id: \.self) { image in
-                                let picture = Picture()
-                                
+                            for image in images {
+                                let picture = Picture(image: image)
+                                entry.pictures.append(picture)
+                                picture.entry = entry
+                            }
+                            
+                            try? realm.write {
+                                realm.add(entry)
                             }
                         }
+                        
+                        dismiss()
                         
                     } label: {
                         Text("Save")
