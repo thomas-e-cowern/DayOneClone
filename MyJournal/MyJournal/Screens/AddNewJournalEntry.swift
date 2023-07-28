@@ -19,6 +19,9 @@ struct AddNewJournalEntry: View {
     @State private var pickerHidden: Bool = true
     @State private var photoItem: PhotosPickerItem?
     @State private var photoImage: Image?
+    @State private var images: [Image] = []
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
     
     @FocusState private var journalEntryIsFocused: Bool
     
@@ -55,14 +58,35 @@ struct AddNewJournalEntry: View {
                 Spacer()
 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    PhotosPicker(selection: $photoItem,
-                                         matching: .images,
-                                 photoLibrary: .shared()) {
-                        Image(systemName: "camera")
-                            .font(.system(size: 50))
-                            .foregroundColor(Color("PrimaryColor"))
-                            .font(.headline)
+                    HStack {
+                        PhotosPicker(
+                            selection: $selectedItem,
+                            matching: .images,
+                            photoLibrary: .shared()
+                        ) {
+                            Image(systemName: "camera")
+                                .font(.system(size: 50))
+                                .foregroundColor(Color("PrimaryColor"))
+                                .font(.headline)
+                        }
+                        .onChange(of: selectedItem) { newItem in
+                            Task {
+                                // Retrive selected asset in the form of Data
+                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                    selectedImageData = data
+                                }
+                            }
+                        }
+                        
+                        if let selectedImageData,
+                           let uiImage = UIImage(data: selectedImageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                        }
                     }
+      
                 }
             }
             .padding()
