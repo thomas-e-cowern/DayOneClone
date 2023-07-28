@@ -10,6 +10,7 @@
 		4D01B0882A742E54006781BB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4D01B0872A742E54006781BB /* Realm */; };
 		4D01B08A2A742E54006781BB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D01B0892A742E54006781BB /* RealmSwift */; };
 		4D01B08D2A743499006781BB /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B08C2A743499006781BB /* Entry.swift */; };
+		4D01B08F2A7435BD006781BB /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B08E2A7435BD006781BB /* Picture.swift */; };
 		4D0A40502A6FF5D100148256 /* MyJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A404F2A6FF5D100148256 /* MyJournalApp.swift */; };
 		4D0A40522A6FF5D100148256 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A40512A6FF5D100148256 /* ContentView.swift */; };
 		4D0A40542A6FF5D200148256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D0A40532A6FF5D200148256 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		4D01B08C2A743499006781BB /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		4D01B08E2A7435BD006781BB /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		4D0A404C2A6FF5D100148256 /* MyJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0A404F2A6FF5D100148256 /* MyJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJournalApp.swift; sourceTree = "<group>"; };
 		4D0A40512A6FF5D100148256 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				4D01B08C2A743499006781BB /* Entry.swift */,
+				4D01B08E2A7435BD006781BB /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				4D01B08D2A743499006781BB /* Entry.swift in Sources */,
 				4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */,
 				4D2906132A72C6AA00FF3826 /* View+Extensions.swift in Sources */,
+				4D01B08F2A7435BD006781BB /* Picture.swift in Sources */,
 				4D0A40522A6FF5D100148256 /* ContentView.swift in Sources */,
 				4D75DC1D2A70375D007F1101 /* FormatDate.swift in Sources */,
 				4D0A40602A6FFC5B00148256 /* ListScreen.swift in Sources */,

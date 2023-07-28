@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import SwiftUI
 import RealmSwift
 
 class Entry: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var text = ""
     @Persisted var date = Date()
-    @Persisted 
+    @Persisted var pictures = List<Picture>()
 }
