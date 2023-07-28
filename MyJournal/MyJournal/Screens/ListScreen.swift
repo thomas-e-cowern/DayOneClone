@@ -10,7 +10,7 @@ import RealmSwift
 
 struct ListScreen: View {
     
-    @State var entries: [Entry] = []
+    @ObservedResults(Entry.self) var entries
     
     var body: some View {
         VStack {
@@ -18,19 +18,14 @@ struct ListScreen: View {
             
             Spacer()
             
-        }
-        .onAppear {
-            loadEntries()
-        }
-    }
-    
-    func loadEntries () {
-        if let realm = try? Realm() {
-            entries = realm.objects(Entry.self)
-            print(entries.count)
-            print(entries[0].text)
-            print(entries[0].date)
-            print(entries[0].pictures.count)
+            if let realm = try? Realm() {
+                
+                List {
+                    ForEach(entries, id: \.self) { entry in
+                        Text(entry.text)
+                    }
+                }
+            }
         }
     }
 }

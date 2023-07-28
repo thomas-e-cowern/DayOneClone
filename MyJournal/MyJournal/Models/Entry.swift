@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Entry: Object {
+class Entry: Object, Identifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var text = ""
     @Persisted var date = Date()
