@@ -16,10 +16,7 @@ struct AddNewJournalEntry: View {
     @State private var journalText: String = ""
     @State private var date = Date.now
     
-    @State private var pickerHidden: Bool = true
-    @State private var photoItem: PhotosPickerItem?
-    @State private var photoImage: Image?
-    @State private var images: [Image] = []
+    @State private var images: [UIImage] = []
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     
@@ -74,13 +71,17 @@ struct AddNewJournalEntry: View {
                                 // Retrive selected asset in the form of Data
                                 if let data = try? await newItem?.loadTransferable(type: Data.self) {
                                     selectedImageData = data
+                                    if let selectedImageData {
+                                        if let uiImage = UIImage(data: selectedImageData) {
+                                            images.append(uiImage)
+                                        }
+                                    }
                                 }
                             }
                         }
-                        
-                        if let selectedImageData,
-                           let uiImage = UIImage(data: selectedImageData) {
-                            Image(uiImage: uiImage)
+
+                        ForEach(images, id: \.self) { image in
+                            Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 100)
