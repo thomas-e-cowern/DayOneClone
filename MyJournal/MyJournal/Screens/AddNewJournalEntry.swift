@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddNewJournalEntry: View {
     
@@ -14,6 +15,10 @@ struct AddNewJournalEntry: View {
     @State private var title: String = "\(FormatDate().dateAsString(date: Date.now))"
     @State private var journalText: String = ""
     @State private var date = Date.now
+    
+    @State private var pickerHidden: Bool = true
+    @State private var photoItem: PhotosPickerItem?
+    @State private var photoImage: Image?
     
     @FocusState private var journalEntryIsFocused: Bool
     
@@ -48,17 +53,16 @@ struct AddNewJournalEntry: View {
                 .padding(.bottom, 50)
                 
                 Spacer()
-                
+
                 ScrollView(.horizontal, showsIndicators: false) {
-                    Button {
-                        // Show photos
-                    } label: {
+                    PhotosPicker(selection: $photoItem,
+                                         matching: .images,
+                                 photoLibrary: .shared()) {
                         Image(systemName: "camera")
                             .font(.system(size: 50))
                             .foregroundColor(Color("PrimaryColor"))
                             .font(.headline)
                     }
-
                 }
             }
             .padding()
