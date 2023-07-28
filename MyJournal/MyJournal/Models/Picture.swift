@@ -17,7 +17,6 @@ class Picture: Object {
     convenience init(image: UIImage) {
         self.init()
         fullImageName = imageToUrlString(image: image)
-        
     }
     
     func imageToUrlString(image: UIImage) -> String {

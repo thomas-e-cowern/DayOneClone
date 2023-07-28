@@ -19,10 +19,17 @@ struct ListScreen: View {
             Spacer()
             
             if let realm = try? Realm() {
-                
                 List {
                     ForEach(entries, id: \.self) { entry in
-                        Text(entry.text)
+                        HStack {
+                            Image(systemName: "photo.artframe")
+                                .font(.system(size: 65))
+                            VStack (alignment: .leading) {
+                                Text("\(FormatDate().dateAsString(date: entry.date))")
+                                    .bold()
+                                Text(entry.text)
+                            }
+                        }
                     }
                 }
             }

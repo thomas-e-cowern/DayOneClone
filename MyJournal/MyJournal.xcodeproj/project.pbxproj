@@ -22,6 +22,7 @@
 		4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC152A701D3F007F1101 /* AddEntryView.swift */; };
 		4D75DC1A2A7021CC007F1101 /* AddNewJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */; };
 		4D75DC1D2A70375D007F1101 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC1C2A70375D007F1101 /* FormatDate.swift */; };
+		4DE8F81B2A746920008A6F23 /* Date+Extensios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8F81A2A746920008A6F23 /* Date+Extensios.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4D75DC152A701D3F007F1101 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalEntry.swift; sourceTree = "<group>"; };
 		4D75DC1C2A70375D007F1101 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
+		4DE8F81A2A746920008A6F23 /* Date+Extensios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensios.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				4D2906122A72C6AA00FF3826 /* View+Extensions.swift */,
+				4DE8F81A2A746920008A6F23 /* Date+Extensios.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				4D01B08F2A7435BD006781BB /* Picture.swift in Sources */,
 				4D0A40522A6FF5D100148256 /* ContentView.swift in Sources */,
 				4D75DC1D2A70375D007F1101 /* FormatDate.swift in Sources */,
+				4DE8F81B2A746920008A6F23 /* Date+Extensios.swift in Sources */,
 				4D0A40602A6FFC5B00148256 /* ListScreen.swift in Sources */,
 				4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */,
 				4D0A40502A6FF5D100148256 /* MyJournalApp.swift in Sources */,
