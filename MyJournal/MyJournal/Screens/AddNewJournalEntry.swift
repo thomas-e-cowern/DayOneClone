@@ -102,18 +102,17 @@ struct AddNewJournalEntry: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        // Cancel
-                        let dawg = Hotdog()
-                        dawg.name = "New Jersey"
-                        
+                        // Save entry useing realm
                         if let realm = try? Realm() {
-//                            try? realm.write {
-//                                realm.add(dawg)
-//                            }
-                            
-                            let dawg = realm.objects(Hotdog.self)
-                            print("Hotdog: ", dawg.first?.name)
+                            let entry = Entry()
+                            entry.text = journalText
+                            entry.date = date
+                            ForEach(images, id: \.self) { image in
+                                let picture = Picture()
+                                
+                            }
                         }
+                        
                     } label: {
                         Text("Save")
                             .foregroundColor(.white)

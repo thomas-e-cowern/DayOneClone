@@ -6,11 +6,28 @@
 //
 
 import Foundation
-import SwiftUI
 import RealmSwift
+import PhotosUI
 
 class Picture: Object {
     @Persisted var fullImageName = ""
     @Persisted var thumbnailName = ""
     @Persisted var entry: Entry?
+    
+    convenience init(image: UIImage) {
+        self.init()
+        
+    }
+    
+    func imageToUrlString(image: UIImage) -> String {
+        if let imageData = image.pngData() {
+            let fileName = UUID().uuidString + ".png"
+            if var path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                path.append(component: fileName)
+                try? imageData.write(to: path)
+                return fileName
+            }
+        }
+        return ""
+    }
 }
