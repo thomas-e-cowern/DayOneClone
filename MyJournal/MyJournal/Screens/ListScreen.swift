@@ -22,8 +22,16 @@ struct ListScreen: View {
                 List {
                     ForEach(entries.sorted(by: \.date, ascending: false), id: \.self) { entry in
                         HStack {
-                            Image(systemName: "photo.artframe")
-                                .font(.system(size: 65))
+                            if let image = entry.pictures.first {
+                                Image(uiImage: image.fullImage())
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80, height: 80)
+                            } else {
+                                Image(systemName: "photo.artframe")
+                                    .font(.system(size: 65))
+                            }
+
                             VStack (alignment: .leading) {
                                 Text("\(FormatDate().dateAsString(date: entry.date))")
                                     .bold()
