@@ -30,4 +30,24 @@ class Picture: Object {
         }
         return ""
     }
+    
+    func fullImage() -> UIImage {
+        return imageWithFileName(fileName: fullImageName)
+    }
+    
+    func imageWithFileName(fileName: String) -> UIImage {
+        
+        var path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        path?.appendPathComponent(fileName)
+        
+        if path != nil {
+            if let imageData = try? Data(contentsOf: path!) {
+                if let image = UIImage(data: imageData) {
+                    return image
+                }
+                
+            }
+        }
+        return UIImage()
+    }
 }
