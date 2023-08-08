@@ -18,7 +18,7 @@ struct ListScreen: View {
             
             Spacer()
             
-            if let realm = try? Realm() {
+            if (try? Realm()) != nil {
                 List {
                     ForEach(entries, id: \.self) { entry in
                         HStack {
