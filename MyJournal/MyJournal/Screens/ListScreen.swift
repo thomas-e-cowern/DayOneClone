@@ -28,8 +28,8 @@ struct ListScreen: View {
                                     .scaledToFit()
                                     .frame(width: 80, height: 80)
                             } else {
-                                Image(systemName: "photo.artframe")
-                                    .font(.system(size: 65))
+//                                Image(systemName: "photo.artframe")
+//                                    .font(.system(size: 65))
                             }
 
                             VStack (alignment: .leading) {
