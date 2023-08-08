@@ -27,9 +27,6 @@ struct ListScreen: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 80, height: 80)
-                            } else {
-//                                Image(systemName: "photo.artframe")
-//                                    .font(.system(size: 65))
                             }
 
                             VStack (alignment: .leading) {
