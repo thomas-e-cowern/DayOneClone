@@ -21,22 +21,10 @@ struct ListScreen: View {
             if (try? Realm()) != nil {
                 List {
                     ForEach(entries.sorted(by: \.date, ascending: false), id: \.self) { entry in
-                        HStack {
-                            if let image = entry.pictures.first {
-                                Image(uiImage: image.fullImage())
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 80, height: 80)
-                            }
-
-                            VStack (alignment: .leading) {
-                                Text("\(FormatDate().dateAsString(date: entry.date))")
-                                    .bold()
-                                Text(entry.text)
-                            }
-                        }
+                        EntryListView(entry: entry)
                     }
-                }
+                } // MARK: End of list
+                .listRowInsets(EdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
         }
     }

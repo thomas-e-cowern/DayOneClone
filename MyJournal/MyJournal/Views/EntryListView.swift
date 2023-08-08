@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EntryListView: View {
     
-    private var entry: Entry
+    var entry: Entry
     
     var body: some View {
         HStack {
@@ -18,14 +18,23 @@ struct EntryListView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
+                    .cornerRadius(15)
+                
+                Spacer()
             }
-
-            VStack (alignment: .leading) {
-                Text("\(FormatDate().dateAsString(date: entry.date))")
+            
+            Text(entry.text)
+                .lineLimit(3)
+                
+            Spacer()
+            
+            VStack (alignment: .center) {
+                Text("\(entry.date.formatted(.dateTime.weekday()))")
                     .bold()
-                Text(entry.text)
+                Text("\(entry.date, format: .dateTime.day())")
             }
-    } //: End of HStack
+        } //: End of HStack
+    }
 }
 
 //struct EntryListView_Previews: PreviewProvider {

@@ -11,7 +11,7 @@ import SwiftUI
 extension Date {
     func dateAsString(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .short
         return formatter.string(from: date)
     }
 }
