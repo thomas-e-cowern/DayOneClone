@@ -20,7 +20,7 @@ struct ListScreen: View {
             
             if (try? Realm()) != nil {
                 List {
-                    ForEach(entries.sorted(by: \.date, ascending: true), id: \.self) { entry in
+                    ForEach(entries.sorted(by: \.date, ascending: false), id: \.self) { entry in
                         HStack {
                             Image(systemName: "photo.artframe")
                                 .font(.system(size: 65))
