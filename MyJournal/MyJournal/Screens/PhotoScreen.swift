@@ -12,32 +12,35 @@ struct PhotoScreen: View {
     
     @ObservedResults(Picture.self) var pictures
     
-    private var gridItemLayout = [GridItem(.fixed(200)), GridItem(.fixed(200))]
+    private var gridItemLayout = [GridItem(.fixed(180)), GridItem(.fixed(180))]
     
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: gridItemLayout) {
-                if (try? Realm()) != nil {
-                    ForEach(pictures, id: \.self) { picture in
-                        ZStack {
-                            
-                            Image(uiImage: picture.fullImage())
-                                .resizable()
-                                .scaledToFit()
-                                .overlay (
-                                    Text(picture.entry?.entryDateAsString() ?? "No Date")
-                                        .foregroundColor(.white)
-                                    , alignment: .bottomTrailing
-                                )
-                
-//                            Text(picture.entry?.entryDateAsString() ?? "No Date")
-//                                .foregroundColor(.white)
+        VStack {
+            ScrollView {
+                LazyVGrid(columns: gridItemLayout) {
+                    if (try? Realm()) != nil {
+                        ForEach(pictures, id: \.self) { picture in
+                            ZStack {
+                                Image(uiImage: picture.fullImage())
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 180)
+                                    .overlay (
+                                        Text(picture.entry?.entryDateAsString() ?? "No Date")
+                                            .foregroundColor(.white)
+                                            .fontWeight(.bold)
+                                            .padding(.trailing, 2)
+                                        , alignment: .bottomTrailing
+                                    )
+                            }
                         }
                     }
                 }
+                .padding()
             }
         }
+        
     }
     
     func getPictures() {
