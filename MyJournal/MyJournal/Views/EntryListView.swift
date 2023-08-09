@@ -30,8 +30,12 @@ struct EntryListView: View {
             
             VStack (alignment: .center) {
                 Text("\(entry.date.formatted(.dateTime.weekday()))")
-                    .bold()
+                    .fontWeight(.light)
                 Text("\(entry.date, format: .dateTime.day())")
+                    .bold()
+                    .fontWeight(.heavy)
+                Text("\(entry.date, format: .dateTime.year())")
+                    .fontWeight(.light)
             }
         } //: End of HStack
     }
