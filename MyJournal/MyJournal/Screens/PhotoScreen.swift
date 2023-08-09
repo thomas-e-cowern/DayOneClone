@@ -17,6 +17,7 @@ struct PhotoScreen: View {
     
     var body: some View {
         VStack {
+            PhotoScreenHeaderView()
             ScrollView {
                 LazyVGrid(columns: gridItemLayout) {
                     if (try? Realm()) != nil {
@@ -24,7 +25,6 @@ struct PhotoScreen: View {
                             ZStack {
                                 Image(uiImage: picture.fullImage())
                                     .resizable()
-//                                    .aspectRatio(contentMode: .fit)
                                     .scaledToFill()
                                     .frame(maxHeight: 100)
                                     .clipped()
@@ -42,7 +42,7 @@ struct PhotoScreen: View {
                 .padding()
             }
         }
-        
+
     }
     
     func getPictures() {
