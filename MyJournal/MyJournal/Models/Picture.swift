@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 import PhotosUI
 
-class Picture: Object {
+class Picture: Object, Identifiable {
     @Persisted var fullImageName = ""
     @Persisted var thumbnailName = ""
     @Persisted var entry: Entry?
