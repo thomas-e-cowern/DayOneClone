@@ -21,12 +21,14 @@ struct PhotoScreen: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: 0) {
+            LazyVGrid(columns: gridItemLayout, spacing: 10) {
                 if (try? Realm()) != nil {
                     ForEach(entries, id: \.self) { entry in
                         ForEach(entry.pictures) { picture in
                             Image(uiImage: picture.fullImage())
-
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200)
                         }
                     }
                 }
