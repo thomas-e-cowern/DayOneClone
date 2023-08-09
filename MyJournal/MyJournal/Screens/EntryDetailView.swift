@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct EntryDetailView: View {
     
     var entry: Entry
     
     var body: some View {
-        Text("Entry Detail View")
+        PhotoScreenHeaderView()
+        ScrollView {
+            Text(entry.entryDateAsString())
+            Text(entry.text)
+            
+            ForEach(entry.pictures) { picture in
+                Image(uiImage: picture.fullImage())
+                    .resizable()
+                    .scaledToFill()
+            }
+        }
     }
 }
 

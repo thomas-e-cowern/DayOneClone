@@ -32,6 +32,7 @@ struct ListScreen: View {
                 }
             }
         }
+        .tint(.white)
     }
     
     func groupByYear(entries: [Entry]) -> [(String, [Entry])] {
