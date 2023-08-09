@@ -14,5 +14,9 @@ class Entry: Object, Identifiable {
     @Persisted var date = Date()
     @Persisted var pictures = List<Picture>()
     
-    
+    func dateAsString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM, d, yyyy"
+        return formatter.string(from: date)
+    }
 }
