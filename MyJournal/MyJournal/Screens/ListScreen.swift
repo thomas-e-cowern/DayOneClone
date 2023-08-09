@@ -22,7 +22,7 @@ struct ListScreen: View {
                 if (try? Realm()) != nil {
                     List(entries.sorted(by: \.date, ascending: false), id: \.self) { entry in
                         NavigationLink {
-                            EntryDetailView()
+                            EntryDetailView(entry: entry)
                         } label: {
                             EntryListView(entry: entry)
                         }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EntryDetailView: View {
+    
+    var entry: Entry
+    
     var body: some View {
         Text("Entry Detail View")
     }
@@ -15,6 +18,6 @@ struct EntryDetailView: View {
 
 struct EntryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryDetailView()
+        EntryDetailView(entry: Entry())
     }
 }
