@@ -16,30 +16,36 @@ struct PhotoScreen: View {
     
     
     var body: some View {
-        VStack {
-            PhotoScreenHeaderView()
-            ScrollView {
-                LazyVGrid(columns: gridItemLayout) {
-                    if (try? Realm()) != nil {
-                        ForEach(pictures, id: \.self) { picture in
-                            ZStack {
-                                Image(uiImage: picture.fullImage())
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(maxHeight: 100)
-                                    .clipped()
-                                    .overlay (
-                                        Text(picture.entry?.entryDateAsString() ?? "No Date")
-                                            .foregroundColor(.white)
-                                            .fontWeight(.bold)
-                                            .padding(.trailing, 2)
-                                        , alignment: .bottomTrailing
-                                    )
+        NavigationStack {
+            VStack {
+                PhotoScreenHeaderView()
+                ScrollView {
+                    LazyVGrid(columns: gridItemLayout) {
+                        if (try? Realm()) != nil {
+                            ForEach(pictures, id: \.self) { picture in
+                                NavigationLink {
+                                    EntryDetailView(entry: picture.entry ?? Entry())
+                                } label: {
+                                    ZStack {
+                                        Image(uiImage: picture.fullImage())
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(maxHeight: 100)
+                                            .clipped()
+                                            .overlay (
+                                                Text(picture.entry?.entryDateAsString() ?? "No Date")
+                                                    .foregroundColor(.white)
+                                                    .fontWeight(.bold)
+                                                    .padding(.trailing, 2)
+                                                , alignment: .bottomTrailing
+                                            )
+                                    }
+                                }
                             }
                         }
                     }
+                    .padding()
                 }
-                .padding()
             }
         }
 
