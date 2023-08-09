@@ -25,9 +25,14 @@ struct PhotoScreen: View {
                             Image(uiImage: picture.fullImage())
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            Text(picture.entry?.entryDateAsString() ?? "No Date")
-                                .foregroundColor(.white)
+                                .overlay (
+                                    Text(picture.entry?.entryDateAsString() ?? "No Date")
+                                        .foregroundColor(.white)
+                                    , alignment: .bottomTrailing
+                                )
+                
+//                            Text(picture.entry?.entryDateAsString() ?? "No Date")
+//                                .foregroundColor(.white)
                         }
                     }
                 }
