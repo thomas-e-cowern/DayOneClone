@@ -12,7 +12,7 @@ struct PhotoScreen: View {
     
     @ObservedResults(Picture.self) var pictures
     
-    private var gridItemLayout = [GridItem(.fixed(180)), GridItem(.fixed(180))]
+    private var gridItemLayout = [GridItem(.adaptive(minimum: 200)), GridItem(.adaptive(minimum: 200))]
     
     
     var body: some View {
@@ -24,8 +24,10 @@ struct PhotoScreen: View {
                             ZStack {
                                 Image(uiImage: picture.fullImage())
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 180)
+//                                    .aspectRatio(contentMode: .fit)
+                                    .scaledToFill()
+                                    .frame(maxHeight: 100)
+                                    .clipped()
                                     .overlay (
                                         Text(picture.entry?.entryDateAsString() ?? "No Date")
                                             .foregroundColor(.white)
