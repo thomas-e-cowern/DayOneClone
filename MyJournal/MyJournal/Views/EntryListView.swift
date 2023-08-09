@@ -38,6 +38,7 @@ struct EntryListView: View {
                     .fontWeight(.light)
             }
         } //: End of HStack
+        .padding(0)
     }
 }
 

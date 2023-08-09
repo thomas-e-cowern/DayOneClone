@@ -18,10 +18,10 @@ struct AddNewJournalEntry: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @State private var entry = Entry()
     @State private var title: String = "\(FormatDate().dateAsString(date: Date.now))"
     @State private var journalText: String = ""
     @State private var date = Date.now
-    
     @State private var images: [UIImage] = []
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
