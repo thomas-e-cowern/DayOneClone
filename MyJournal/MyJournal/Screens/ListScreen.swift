@@ -24,10 +24,16 @@ struct ListScreen: View {
                         EntryListView(entry: entry)
                     }
                 } // MARK: End of list
-                .listRowInsets(EdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+//                .listStyle(.grouped)
+                
             }
         }
     }
+    
+    func groupByYear(_ entries: [Entry]) -> [(String, [Entry])] {
+        let grouped = Dictionary(grouping: entries, by: { $0.date.formatted(.dateTime.year()) })
+            return grouped.sorted(by: { $0.key < $1.key })
+        }
 }
 
 struct ListScreen_Previews: PreviewProvider {

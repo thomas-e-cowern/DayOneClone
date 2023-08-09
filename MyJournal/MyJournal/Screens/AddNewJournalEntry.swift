@@ -114,7 +114,9 @@ struct AddNewJournalEntry: View {
                             }
                             
                             try? realm.write {
+                                print("Entry added")
                                 realm.add(entry)
+                               
                             }
                         }
                         
