@@ -27,6 +27,7 @@ struct TabbedSidebar: View {
                     }
                     .tag(2)
             }
+            
         } else {
             NavigationView {
                 List {
