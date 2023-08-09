@@ -13,15 +13,20 @@ struct EntryDetailView: View {
     var entry: Entry
     
     var body: some View {
-        PhotoScreenHeaderView()
+        EntryDetailHeaderView(date: entry.entryDateAsString())
         ScrollView {
-            Text(entry.entryDateAsString())
+
             Text(entry.text)
+                .padding(.horizontal, 5)
             
-            ForEach(entry.pictures) { picture in
-                Image(uiImage: picture.fullImage())
-                    .resizable()
-                    .scaledToFill()
+            if entry.pictures.count == 0 {
+                Text("There are no pictures for this entry")
+            } else {
+                ForEach(entry.pictures) { picture in
+                    Image(uiImage: picture.fullImage())
+                        .resizable()
+                        .scaledToFill()
+                }
             }
         }
     }

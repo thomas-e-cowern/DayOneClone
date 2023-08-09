@@ -19,6 +19,7 @@
 		4D0A40622A6FFCE600148256 /* PhotoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A40612A6FFCE600148256 /* PhotoScreen.swift */; };
 		4D2906132A72C6AA00FF3826 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2906122A72C6AA00FF3826 /* View+Extensions.swift */; };
 		4D42EA992A83E21A00E23D43 /* PhotoScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EA982A83E21A00E23D43 /* PhotoScreenHeaderView.swift */; };
+		4D42EA9B2A83EAE600E23D43 /* EntryDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EA9A2A83EAE600E23D43 /* EntryDetailHeaderView.swift */; };
 		4D75DC142A700B5D007F1101 /* TabbedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */; };
 		4D75DC162A701D3F007F1101 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC152A701D3F007F1101 /* AddEntryView.swift */; };
 		4D75DC1A2A7021CC007F1101 /* AddNewJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */; };
@@ -40,6 +41,7 @@
 		4D0A40612A6FFCE600148256 /* PhotoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScreen.swift; sourceTree = "<group>"; };
 		4D2906122A72C6AA00FF3826 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		4D42EA982A83E21A00E23D43 /* PhotoScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScreenHeaderView.swift; sourceTree = "<group>"; };
+		4D42EA9A2A83EAE600E23D43 /* EntryDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailHeaderView.swift; sourceTree = "<group>"; };
 		4D75DC132A700B5D007F1101 /* TabbedSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedSidebar.swift; sourceTree = "<group>"; };
 		4D75DC152A701D3F007F1101 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		4D75DC192A7021CC007F1101 /* AddNewJournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalEntry.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				4D75DC152A701D3F007F1101 /* AddEntryView.swift */,
 				4DD721122A82BACE00333E5F /* EntryListView.swift */,
 				4D42EA982A83E21A00E23D43 /* PhotoScreenHeaderView.swift */,
+				4D42EA9A2A83EAE600E23D43 /* EntryDetailHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				4D0A40502A6FF5D100148256 /* MyJournalApp.swift in Sources */,
 				4D75DC1A2A7021CC007F1101 /* AddNewJournalEntry.swift in Sources */,
 				4D0A40622A6FFCE600148256 /* PhotoScreen.swift in Sources */,
+				4D42EA9B2A83EAE600E23D43 /* EntryDetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

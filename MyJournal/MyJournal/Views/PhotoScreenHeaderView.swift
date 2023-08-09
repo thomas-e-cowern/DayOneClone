@@ -10,12 +10,12 @@ import SwiftUI
 struct PhotoScreenHeaderView: View {
     var body: some View {
             VStack {
-                Text("My Journal")
+                Text("My Journal Pictures")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
             }
             .frame(maxWidth: .infinity, maxHeight: 50)
-        .background(Color("PrimaryColor"))
+            .background(Color("PrimaryColor"))
     }
 }
 
