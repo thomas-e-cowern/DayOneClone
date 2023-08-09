@@ -10,25 +10,24 @@ import RealmSwift
 
 struct PhotoScreen: View {
     
-    @ObservedResults(Entry.self) var entries
+    @ObservedResults(Picture.self) var pictures
     
-    private var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
-    
-    private var colors: [Color] = [.yellow, .purple, .green]
-    
-    private var gridItemLayout = [GridItem(.flexible(minimum: 100, maximum: 200)), GridItem(.flexible(minimum: 100, maximum: 200))]
+    private var gridItemLayout = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: 10) {
+            LazyVGrid(columns: gridItemLayout) {
                 if (try? Realm()) != nil {
-                    ForEach(entries, id: \.self) { entry in
-                        ForEach(entry.pictures) { picture in
+                    ForEach(pictures, id: \.self) { picture in
+                        ZStack {
+                            
                             Image(uiImage: picture.fullImage())
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 200)
+                                .frame(width: 200, height: 200)
+                            Text(picture.entry?.entryDateAsString() ?? "No Date")
+                                .foregroundColor(.white)
                         }
                     }
                 }
@@ -37,7 +36,9 @@ struct PhotoScreen: View {
     }
     
     func getPictures() {
-        
+        if (try? Realm()) != nil {
+            
+        }
     }
 }
 
