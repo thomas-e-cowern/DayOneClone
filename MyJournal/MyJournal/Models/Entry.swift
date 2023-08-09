@@ -13,5 +13,4 @@ class Entry: Object, Identifiable {
     @Persisted var text = ""
     @Persisted var date = Date()
     @Persisted var pictures = List<Picture>()
-    
 }

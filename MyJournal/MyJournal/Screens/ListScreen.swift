@@ -24,7 +24,7 @@ struct ListScreen: View {
                         EntryListView(entry: entry)
                     }
                 } // MARK: End of list
-//                .listStyle(.grouped)
+                .listStyle(.insetGrouped)
                 
             }
         }
